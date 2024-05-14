@@ -6,7 +6,7 @@ from reportlab.pdfgen import canvas
 banco = mysql.connector.connect(
     host ="localhost",
     user="root",
-    passwd="Heyjude70*",
+    passwd="**********",
     database="cadastro_produtos"
 )
 def excluir_dados():
