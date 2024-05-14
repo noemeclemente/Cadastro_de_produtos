@@ -9,6 +9,16 @@ banco = mysql.connector.connect(
     passwd="Heyjude70*",
     database="cadastro_produtos"
 )
+def excluir_dados():
+    linha = segunda_tela.tableWidget.currentRow()
+    segunda_tela.tableWidget.removeRow(linha)
+
+    cursor = banco.cursor()
+    cursor.execute("SELECT id FROM produtos")
+    dados_lidos = cursor.fetchall()
+    valor_id = dados_lidos[linha][0]
+    cursor.execute("DELETE FROM produtos WHERE id="+ str(valor_id))
+    print(valor_id)
 
 def gerar_pdf():
     cursor = banco.cursor()
@@ -76,6 +86,7 @@ def chama_segunda_tela():
     if segunda_tela is None:
         segunda_tela = uic.loadUi("listardados.ui")
         segunda_tela.pushButton.clicked.connect(gerar_pdf)
+        segunda_tela.pushButton_2.clicked.connect(excluir_dados)
     segunda_tela.show()
 
     cursor = banco.cursor()
