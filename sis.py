@@ -9,7 +9,7 @@ numero_id = 0
 banco = mysql.connector.connect(
     host ="localhost",
     user="root",
-    passwd="Heyjude70*",
+    passwd="**********",
     database="cadastro_produtos"
 )
 
