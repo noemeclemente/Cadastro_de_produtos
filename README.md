@@ -23,7 +23,8 @@ As bibliotecas e ferramentas utilizadas neste projeto são:
 Você pode instalar as dependências usando o seguinte comando:
 
 ```bash
-pip install PyQt5 mysql-connector-python reportlab 
+pip install PyQt5 mysql-connector-python reportlab
+```
 
 # Configuração do banco de dados
 
